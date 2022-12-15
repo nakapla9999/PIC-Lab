@@ -1,10 +1,10 @@
 /*
- * Summary: PIC16F1827用テンプレート
+ * Summary: PIC12F1822用テンプレート
  * Author: nakapla
  * Created on 2022/12/15
  */
 
-// PIC16F1827 Configuration Bit Settings
+// PIC12F1822 Configuration Bit Settings
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
@@ -32,14 +32,10 @@ void main(void) {
     
     OSCCON = 0b01110010;    // 内部クロック8MHz 4MHzにする場合:0b01101010
     ANSELA = 0b00000000;    // アナログは使用しない(すべてデジタルI/Oに割当)
-    ANSELB = 0b00000000;
-    
-    TRISA = 0b00100000;     // RA5だけ入力専用、その他のピンは出力に割当
-    TRISB = 0b00000000;
+    TRISA = 0b00001000;     // RA5だけ入力専用、その他のピンは出力に割当
     
     PORTA = 0;              // 出力ピンの初期化(すべてLOWにする)
-    PORTB = 0;
-    
+
     while(1){
         
     }
